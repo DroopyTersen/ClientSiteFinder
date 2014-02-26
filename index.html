@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>Live Reload Static Site</title>
+	<link rel="stylesheet" type="text/css" href="bower/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body ng-app='myApp'>
+	<section class='container' ng-controller='finderController'>
+		<nav class='header'><h1>Client Site Finder</h1></nav>
+
+ 		<div instasearch updateevent='updateSites(searchText)'></div>
+
+		<div class='searchResults' ng-repeat='site in sites | orderBy:"url"'>
+			<div class='panel panel-default searchResult'>
+				<h3>{{site.title}}</h3>
+				<a href='{{site.url}}' alt='test'>{{site.url}}</a>
+			</div>
+		</div>
+	</section>
+	
+	<script type="text/javascript" src='bower/angular/angular.js'></script>
+	<script type="text/javascript" src='data.js'></script>
+	<script type="text/javascript" src='scripts/SPScript.Search.js'></script>
+	<script type="text/javascript" src='scripts/directives.js'></script>
+	<script type="text/javascript" src='scripts/services.js'></script>
+	<script type="text/javascript" src='scripts/controllers.js'></script>
+	<script type="text/javascript" src='scripts/app.js'></script>
+
+</body>
+</html>
